@@ -1,0 +1,165 @@
+.fundo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: #3faf82;
+    color: #fff;
+  }
+  
+  centrazilar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  //Variáveis
+  $menu-line-height: 8px;
+  $menu-line-space: 14px;
+  $menu-line-offsetY: $menu-line-height + $menu-line-space;
+  $menu-height: (3 * $menu-line-height) + (2 * $menu-line-space);
+  $cubic-bezier-in: cubic-bezier(0.3, 1, 0.7, 1);
+  $cubic-bezier-out: cubic-bezier(1, 0.7, 1, 0.3);
+  
+  .menu {
+    height: $menu-height;
+    width: 80px;
+    cursor: pointer;
+    z-index: 50;
+    margin-top: 45%;
+    margin-left: 38%;
+  
+    .linha-um {
+      height: $menu-line-height;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 4px;
+      margin-left: 13px;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+      animation: animate-linha-um-rev 0.7s ease-in-out;
+    }
+    .linha-dois {
+      height: $menu-line-height;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+      margin: $menu-line-space;
+      animation: animate-linha-dois-rev 0.7s ease-in-out;
+    }
+    .linha-tres {
+      height: $menu-line-height;
+      width: 100%;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+      margin: $menu-line-space;
+      animation: animate-linha-tres-rev 0.7s ease-in-out;
+    }
+  
+    .menu:hover .linha-um,
+    .menu:active .linha-um {
+      background-color: #fff;
+    }
+  
+    .menu:hover .linha-dois,
+    .menu:active .linha-dois {
+      background-color: #fff;
+    }
+  
+    .menu:hover .linha-tres,
+    .menu:active .linha-tres {
+      background-color: #fff;
+  
+      .linha-um {
+        animation: animate-linha-um 0.8s $cubic-bezier-in forwards;
+      }
+      .linha-dois {
+        animation: animate-linha-dois 0.8s $cubic-bezier-in forwards;
+      }
+      .linha-tres {
+        animation: animate-linha-tres 0.8s $cubic-bezier-in forwards;
+      }
+    }
+  }
+  
+  .no-animation {
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+  
+  @keyframes animate-linha-um {
+    0% {
+      transform: translate(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      translate: translate3d(0, $menu-line-offsetY, 0) rotate(0deg);
+    }
+    100% {
+      translate: translate3d(0, $menu-line-offsetY, 0) rotate(45deg);
+    }
+  }
+  
+  @keyframes animate-linha-dois {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes animate-linha-tres {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(0, $menu-line-offsetY, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(0, -$menu-line-offsetY, 0) rotate(135deg);
+    }
+  }
+  
+  @keyframes animate-line-um-rev {
+    0% {
+      transform: translate3d(0, $menu-line-offsetY, 0) rotate(45deg);
+    }
+    50% {
+      transform: translate3d(0, $menu-line-offsetY, 0) rotate(0);
+    }
+  
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+  }
+  @keyframes animate-linha-dois-rev {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes animate-linha-3-rev {
+    0% {
+      transform: translate3d(0, -$menu-line-offsetY, 0) rotate(135deg);
+    }
+    50% {
+      transform: translate3d(0, -$menu-line-offsetY, 0) rotate(0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+  }
+  
